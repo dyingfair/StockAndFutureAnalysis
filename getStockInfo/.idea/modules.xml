@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../.idea/StockAndFutureAnalysis.iml" filepath="$PROJECT_DIR$/../.idea/StockAndFutureAnalysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/getStockInfo.iml" filepath="$PROJECT_DIR$/.idea/getStockInfo.iml" />
     </modules>
   </component>
