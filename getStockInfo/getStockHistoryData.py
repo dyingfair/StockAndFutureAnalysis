@@ -5,6 +5,7 @@ import requests
 import datetime,time,os
 import numpy as np
 import matplotlib.pyplot as plt
+from line_profiler import LineProfiler
 
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
@@ -137,12 +138,15 @@ def get_stock_PE_PB(str_stock_code):
     ax4.set_ylabel('Price')
     ax4.set_xticks(date[:: (int(len(date) / 10) + 1)])
     plt.legend(loc = 1)
-
     plt.show()
 
 
 stock_code = input("Please input the stock code(6 numbers): ")
 str_stock_code = get_stock_code(stock_code)
 
+lp = LineProfiler()
 if 0 !=  len(str_stock_code):
-    get_stock_PE_PB(str_stock_code)
+    lp_wrapper = lp(get_stock_PE_PB)
+    lp_wrapper(str_stock_code)
+    lp.print_stats()
+#    get_stock_PE_PB(str_stock_code)
