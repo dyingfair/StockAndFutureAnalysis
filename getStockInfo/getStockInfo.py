@@ -1,5 +1,5 @@
-#fdsfadsfad
-from  urllib.request import urlopen
+# _*_coding:utf-8_*_
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import requests
 import datetime,time,os
